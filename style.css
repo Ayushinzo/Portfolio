@@ -1,0 +1,622 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    color: white;
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+html body{
+    width: 100%;
+    overflow-x: hidden;
+    background-color: var(--bgColor);
+    padding: 3rem 4rem;
+}
+body::-webkit-scrollbar{
+    background: transparent;
+}
+body::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+body::-webkit-scrollbar-thumb{
+    background: linear-gradient(pink, green);
+    border-radius: 20px;
+}
+:root{
+    --bgColor: black;
+    --border: .1rem solid rgb(116, 116, 116);
+    --navCol: red;
+}
+.header{
+    position: fixed;
+    top: 0; left: 0;
+    width: 30rem;
+    height: 100vh;
+    background-color:var(--navCol);
+    z-index: 999;
+    left: -30rem;
+    transition: .2s linear;
+}
+.header .image{
+    margin-top: 6rem;
+    display: flex;
+    justify-content: center;
+}
+.header .image img{
+    height: 11rem;
+    width: 11rem;
+    border-radius: 50%;
+    border: .4rem solid rgb(116, 116, 116);
+}
+.header h2{
+    text-align: center;
+    font-size: 2.2rem;
+    margin-top: 1rem;
+}
+.header h5{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: .4rem;
+    opacity: .9;
+}
+.header .navBar{
+    margin-top: 4rem;
+}
+.header .navBar a{
+    display: block;
+    margin: 1.8rem 0;
+    margin-left: 4rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+.header .navBar a:hover{
+    text-decoration: underline;
+    text-underline-offset: .8rem;
+}
+.header .share{
+    text-align: center;
+    margin-top: 4rem;
+}
+.header .share i{
+    font-size: 4rem;
+    margin: 0 .5rem;
+    padding: .3rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+.header .share i:hover{
+    background-color: white;
+    color: black;
+    transition: .3s linear;
+    transform: scale(1.4);
+}
+.header p{
+    text-align: center;
+    margin-top: 5rem;
+    font-size: 1.5rem;
+    padding: 0 2rem;
+    font-weight: 600;
+    line-height: 1.7;
+}
+.header p span{
+    color: greenyellow;
+}
+.deco{
+    position: fixed;
+    top: 0;
+    font-size: 3rem;
+    left: 24rem;
+    top: 1.5rem;
+    padding: .9rem .9rem;
+    border-radius: .8rem;
+    cursor: pointer;
+}
+.can{
+    font-size: 5rem;
+    padding: 0;
+}
+.header .deco{
+    display: none;
+}
+.header.active{
+    left: 0rem;
+}
+.header .deco.active{
+    display: inline-block;
+}
+.menu{
+    position: fixed;
+    background-color: red;
+    left: 3rem;
+    top: 3rem;
+    z-index: 10;
+}
+.home .row{
+    margin-top: 12rem;
+}
+.home .image img{
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+}
+.home .row .content p{
+    font-size: 3.5rem;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+.home>h1{
+    text-align: center;
+    font-size: 6.3rem;
+    font-weight: 800;
+    color: greenyellow;
+    -webkit-text-stroke: .2rem yellow;
+}
+.home .row{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.home .row .content h1{
+    font-size: 4.5rem;
+    color: yellow;
+}
+.home .row .content span{
+    color: greenyellow;
+}
+.home .row .content h2{
+    margin-top: .7rem;
+    font-size: 4.3rem;
+    opacity: .8;
+}
+.summary{
+    margin-top: 12rem;
+}
+.summary h1{
+    text-align: center;
+    font-size: 4.5rem;
+    font-weight: 800;
+}
+.summary h1 span{
+    color: greenyellow;
+}
+.summary .full{
+    width: 100%;
+}
+.content .image img{
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.full .content{
+    width: 80rem;
+    border: .1rem solid greenyellow;
+    padding: 2.6rem;
+    border-radius: 2rem;
+}
+.full .content .image{
+    display: flex;
+    align-items: center;
+    border-bottom: .1rem solid rgb(76, 75, 75);
+    padding-bottom: 1.2rem;
+}
+.full .content .image h3{
+    font-size: 2.2rem;
+    margin-left: 3rem;
+}
+.summary .full{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 11rem;
+}
+.full .content .desc{
+    margin-top: 2rem;
+}
+.full .content .desc p{
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2;
+}
+/* certificate */
+.certificate{
+    margin-top: 15rem;
+}
+.certificate .cer_outer{
+    margin-top: 10rem;
+}
+.certificate h1{
+    text-align: center;
+    font-size: 4.5rem;
+    font-weight: 800;
+}
+.certificate h1 span{
+    color: greenyellow;
+}
+.cer_inner .cer_box .cer_image img{
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+}
+.cer_inner .cer_box .cer_image h3{
+    margin-left: 2rem;
+    font-size: 1.6rem;
+}
+.cer_inner .cer_box{
+    padding: 2rem;
+    border: .1rem solid greenyellow;
+    border-radius: 2rem;
+    background-color:  rgb(61, 60, 60);
+}
+.cer_inner .cer_box p{
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.8;
+}
+.cer_inner .cer_box a{
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 3rem;
+    font-size: 1.4rem;
+    border: .1rem solid greenyellow;
+    border-radius: 1rem;
+    transition: background-color .2s linear;
+}
+.cer_inner .cer_box a:hover{
+    background-color: greenyellow;
+    color: black;
+}
+.cer_inner .cer_box .cer_image{
+    display: flex;
+    align-items: center;
+    border-bottom: .1rem solid rgb(141, 137, 137);
+    padding-bottom: 1rem;
+}
+.certificate .cer_outer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.certificate .cer_outer .cer_inner{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 4rem;
+}
+/* Education */
+.education{
+    margin-top: 15rem;
+}
+.education h1{
+    text-align: center;
+    font-size: 4.5rem;
+    font-weight: 800;
+}
+.education h1 span{
+    color: greenyellow;
+}
+.education .container{
+    display: flex;
+    margin-top: 10rem;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+}
+.education .container .box .img img{
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+}
+.education .container .box .img{
+    display: flex;
+    align-items: center;
+    border-bottom: .1rem solid rgb(141, 137, 137);
+    padding-bottom: 1rem;
+}
+#knm, .box{
+    width: 40rem;
+    border: .1rem solid greenyellow;
+    padding: 2rem;
+    border-radius: 2rem;
+    background-color: rgb(61, 60, 60);
+}
+#knm .img{
+    display: flex;
+    align-items: center;
+    border-bottom: .1rem solid rgb(141, 137, 137);
+    padding-bottom: 1rem;
+}
+#knm .img img{
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+}
+#knm p, .box p{
+    margin-top: 2rem;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+#knm .img h2, .box .img h2{
+    margin-left: 2rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+#knm div:nth-child(3), .box div:nth-child(3){
+    margin-top: .5rem;
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+#knm div:nth-child(4), .box div:nth-child(4){
+    margin-top: .5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+/* skills */
+.skills{
+    margin-top:15rem;
+}
+.skills h1{
+    text-align: center;
+    font-size: 4.5rem;
+    font-weight: 800;
+}
+.skills span{
+    color: greenyellow;
+}
+.skills .toCenter{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.skills .toCenter .skillsSet{
+    display: grid;
+    width: 80%;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    margin-top: 10rem;
+    gap: 3rem;
+}
+.skills .toCenter .skillsSet .skill{
+    border: .1rem solid greenyellow;
+    border-radius: 1rem;
+    padding: 2.5rem;
+    background-color: rgb(42, 42, 42);
+}
+.skills .toCenter .skillsSet .skill p{
+    text-align: center;
+    margin-top: 2.5rem;
+    font-size: 2rem;
+    font-weight: 800;
+}
+.skillsSet .skill .image{
+    display: flex;
+    justify-content: center;
+}
+.skills .toCenter .skillsSet .skill .image img{
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.projects{
+    margin-top: 15rem;
+}
+.projects h1{
+    text-align: center;
+    font-size: 4.5rem;
+    font-weight: 800;
+}
+.projects h1 span{
+    color: greenyellow;
+}
+.outer{
+    margin-top: 10rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.outer .inner{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 5rem;
+}
+.outer .inner .pro{
+    border: .1rem solid greenyellow;
+    background-color: rgb(42, 42, 42);
+}
+.pro{
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 100%;
+}
+.outer .inner .pro .image img{
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+.outer .inner .pro h2{
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 900;
+    border-bottom: .1rem solid green;
+    padding-bottom: 1rem;
+}
+.outer .inner .pro p{
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.6;
+}
+.outer .inner .pro .pro_skills{
+    margin-top: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.outer .inner .pro .pro_skills h5{
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    background-color: rgb(61, 60, 60);
+}
+.outer .inner .pro a{
+    padding: 1rem 3rem;
+    display: inline-block;
+    margin-top: 1.5rem;
+    border-radius: 1rem;
+    font-size: 1.4rem;
+    border: .1rem solid greenyellow;
+}
+.outer .inner .pro a:hover{
+    background-color: greenyellow;
+    color: black;
+}
+/* footer */
+.footer{
+    margin-top: 10rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(42, 42, 42);
+}
+.footer .main_container{
+    display: grid;
+    width: 80%;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 5rem;
+    padding-top: 4rem;
+}
+.footer .main_container .head_box{
+    text-align: center;
+}
+.footer .main_container .head_box h2{
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+.footer .main_container .head_box a{
+    display: block;
+    margin: 1rem 0;
+    font-size: 1.6rem;
+    padding: .2rem 0;
+}
+.footer .main_container .head_box p{
+    margin: 1rem 0;
+    font-size: 1.6rem;
+    padding: .2rem 0;
+}
+.footer .main_container .head_box a:hover{
+    text-decoration: underline;
+    text-underline-offset: .5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1300px){
+    html{
+        font-size: 55%;
+    }
+}
+@media (max-width: 870px){
+    html body{
+        padding-top: 7rem;
+    }
+    .home .row{
+        flex-direction: column-reverse;
+        margin-top: 5rem;
+    }
+    .menu{
+        left: 1.5rem;
+    }
+    .home .row .content{
+        margin-top: 8rem;
+        text-align: center;
+    }
+    .home h1{
+        font-size: 5rem;
+    }
+    .home .row .content h1 {
+        font-size: 4rem;
+    }
+    .home .row .content h2 {
+        font-size: 3.5rem;
+    }
+    .skills .toCenter .skillsSet{
+        width: 100%;
+    }
+    .outer .inner{
+        width: 100%;
+    }
+    .skills .toCenter .skillsSet{
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    }
+    .certificate .cer_outer .cer_inner{
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        gap: 3rem;
+    }
+}
+@media (max-width: 550px){
+    .row .card .cerContent p{
+        margin-bottom: 3.5rem;
+    }
+    .certificate .row .card{
+        width: 100%;
+    }
+    .certificate .row .card{
+        width: 100%;
+    }
+    .box{
+        width: 100%;
+    }
+    #knm{
+        width: 100%;
+    }
+    .certificate .cer_outer .cer_inner{
+        width: 100%;
+        gap: 2rem;
+    }
+    .skills .toCenter .skillsSet{
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    }
+    .footer .main_container{
+        width: 100%;
+    }
+    .outer .inner .pro{
+        padding: 3rem;
+    }
+}
+@media (max-width: 450px){
+    html{
+        font-size: 50%;
+    }
+    .summary .full{
+        margin-top: 12rem;
+    }
+    .home h1{
+        font-size: 4.3rem;
+    }
+}
