@@ -20,7 +20,7 @@ window.onscroll = () =>{
 }
 
 var typed = new Typed('#element', {
-    strings: ['C','C++','HTML', 'CSS', 'Javascript', 'Python', 'mongodb', 'SQL', 'GSAP', 'Bootstrap', 'Batch Scripting', 'git and github'],
+    strings: ['C','C++','HTML', 'CSS', 'Javascript', 'Python', 'mongodb', 'SQL', 'GSAP', 'Bootstrap', 'git and github'],
     typeSpeed: 70,
     loop: true,
     backSpeed: 30,
