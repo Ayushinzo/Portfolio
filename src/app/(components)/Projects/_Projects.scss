@@ -1,0 +1,29 @@
+@import "../../globals.scss";
+
+.projects {
+    padding: 4rem 1rem;
+    // background: linear-gradient(teal, orange);
+
+    h2 {
+        font-size: 2.5rem;
+        text-align: center;
+
+        span {
+            font-size: 2.5rem;
+            color: $hoverColor;
+        }
+    }
+
+    .pro-content {
+        margin-top: 4rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .sub-pro-content {
+            width: 80%;
+            position: relative;
+        }
+    }
+}

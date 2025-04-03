@@ -1,0 +1,71 @@
+@import "../../globals.scss";
+
+.certificate-item {
+    @include morphism;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 10px;
+    background-color: black;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    .organization {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+        font-weight: 600;
+        color: white;
+    }
+
+    hr {
+        margin: 0.8rem 0;
+        border: none;
+        border-top: 1px solid $hoverColor;
+    }
+
+    .cer-name {
+        margin-top: 0.7rem;
+        text-transform: capitalize;
+        font-size: 1.1rem;
+        text-decoration: underline;
+        text-underline-offset: 0.4rem;
+        transform: scaleX(1.2);
+        color: white;
+    }
+
+    .description {
+        font-size: 0.9rem;
+        margin-top: 0.8rem;
+        line-height: 1.5;
+        margin-bottom: 0.6rem;
+        color: white;
+    }
+
+    .cer-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 1rem;
+
+        a {
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 5px;
+            background-color: $hoverColor;
+            color: white;
+            font-weight: 500;
+            transition: all 0.3s linear;
+
+            &:hover {
+                background-color: transparent;
+                color: $hoverColor;
+                border: 1px solid $hoverColor;
+            }
+        }
+
+        i {
+            font-size: 0.95rem;
+            color: white;
+        }
+    }
+}

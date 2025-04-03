@@ -1,0 +1,96 @@
+@import "../../globals.scss";
+
+.education {
+    padding: 4rem 1rem;
+    // background: linear-gradient(green, red);
+    width: 100%;
+
+    h2 {
+        text-align: center;
+        font-size: 2.5rem;
+
+        span {
+            font-size: 2.5rem;
+            color: $hoverColor;
+        }
+    }
+
+    .content {
+        margin-top: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .sub-edu {
+            width: 35rem;
+            border-left: $border;
+            padding: 2rem;
+            border-left: 7px solid $hoverColor;
+
+            .edu-box {
+                border: 2px solid $hoverColor;
+                padding: 1rem;
+                margin-top: 1.5rem;
+                position: relative;
+                @include morphism;
+                background: black;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+                .index {
+                    position: absolute;
+                    top: -13%;
+                    left: -3%;
+                    padding: 1.3rem;
+                    background-color: $hoverColor;
+                    clip-path: polygon(20% 0, 55% 28%, 100% 30%, 70% 59%, 70% 100%, 40% 69%, 0% 70%, 24% 40%);
+                }
+
+                .hr {
+                    margin-top: .8rem;
+                }
+
+                .image {
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        width: 3.5rem;
+                        height: 3.5rem;
+                        border-radius: 50%;
+                        padding: .1rem;
+                        border: .1rem solid $hoverColor;
+                    }
+
+                    h3 {
+                        margin-left: 1rem;
+                    }
+                }
+
+                .edu-content {
+                    margin-top: .5rem;
+
+                    p {
+                        margin-top: .7rem;
+                    }
+
+                    p:first-child {
+                        font-weight: 500;
+                        font-size: 1.25rem;
+                    }
+
+                    p:last-child {
+                        display: flex;
+                        align-items: center;
+                        justify-content: start;
+                        gap: .5rem;
+                        font-size: .9rem
+                    }
+                }
+
+                &:hover {
+                    background-color: $hoverColor;
+                }
+            }
+        }
+    }
+}

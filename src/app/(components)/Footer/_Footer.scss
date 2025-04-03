@@ -1,0 +1,67 @@
+@import "../../globals.scss";
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    display: flex;
+    width: 85%;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 5rem;
+    padding: 3rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+    @include morphism;
+    background-color: black;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    .follow-me {
+        ul {
+            li {
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: .5rem;
+                }
+            }
+        }
+    }
+
+    div {
+        h2 {
+            text-align: center;
+        }
+        ul {
+            margin-top: 1rem;
+            gap: .5rem;
+
+            li {
+                list-style: none;
+                text-align: center;
+                margin-top: .4rem;
+
+                a {
+                    text-decoration: none;
+                    color: $color;
+                    font-size: 1.2rem;
+                    transition: all .3s ease-in-out;
+                    font-size: .95rem;
+
+                    &:hover {
+                        color: $color;
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
+}

@@ -1,0 +1,93 @@
+@import "../../globals.scss";
+
+.project-item {
+    min-width: 20rem;
+    padding: 1.2rem;
+    @include morphism;
+    background: black;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    .image {
+        width: 100%;
+
+        img {
+            width: 100%;
+            height: 11rem;
+            position: relative;
+        }
+    }
+
+    &:hover {
+        background-color: $hoverColor;
+    }
+
+    h2 {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        font-weight: 400;
+        text-align: start;
+        text-decoration: underline;
+        font-weight: 600;
+        text-underline-offset: .4rem;
+        color: $hoverColor;
+    }
+
+    hr {
+        margin-top: 1rem;
+    }
+
+    p {
+        margin-top: 1.3rem;
+        font-size: .9rem;
+        line-height: 1.8;
+    }
+
+    .link {
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1.5rem;
+
+        a {
+            display: inline-block;
+            font-size: 2.1rem !important;
+            font-weight: 600;
+
+            .zz {
+                font-size: inherit;
+            }
+        }
+    }
+
+    .project-skills {
+        margin-top: 1.3rem;
+        display: flex;
+        align-items: center;
+        gap: .8rem;
+        flex-wrap: wrap;
+
+        span {
+            background-color: $hoverColor;
+            font-size: .9rem;
+            padding: .2rem .3rem;
+        }
+    }
+
+    &:hover {
+        h2 {
+            color: white;
+        }
+
+        .project-skills {
+            span {
+                background-color: rgb(95, 95, 95);
+            }
+        }
+    }
+}
+
+.swiper-pagination-bullet {
+    background-color: $hoverColor !important;
+}

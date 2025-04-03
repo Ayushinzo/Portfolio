@@ -1,0 +1,84 @@
+@import "../../globals.scss";
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1.1rem .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+
+    .image {
+        h1 {
+            font-size: 3rem;
+            user-select: none;
+            cursor: pointer;
+
+            span {
+                font-size: 3rem;
+                color: $hoverColor;
+                user-select: none;
+            }
+        }
+    }
+
+    nav {
+        ul {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+
+            li:last-child {
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: .2rem;
+
+                    .download {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+
+            li {
+                list-style: none;
+                position: relative;
+
+                a {
+                    text-decoration: none;
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                    padding: .4rem .8rem;
+                    border-radius: 10px;
+
+                    &:hover {
+                        background-color: $hoverColor;
+                    }
+
+                    &.active{
+                        background-color: $hoverColor;
+                    }
+                }
+            }
+        }
+
+        .cross {
+            cursor: pointer;
+            position: absolute;
+            top: 3%;
+            right: 3%;
+        }
+    }
+
+    .menu {
+        font-size: 3.3rem;
+        padding: .4rem;
+        background-color: $hoverColor;
+        cursor: pointer;
+        display: none;
+    }
+}

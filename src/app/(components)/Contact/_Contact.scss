@@ -1,0 +1,82 @@
+@import "../../globals.scss";
+
+.contact {
+    margin: 3rem 1rem;
+
+    h2 {
+        text-align: center;
+        font-size: 2.5rem;
+
+        span {
+            font-size: 2.5rem;
+            color: $hoverColor;
+        }
+    }
+
+    .contact-content {
+        margin-top: 6rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 3rem;
+
+        .image {
+            img {
+                width: 23rem;
+                height: 23rem;
+                padding: 1rem;
+            }
+        }
+
+        .contact-description {
+            width: 23rem;
+
+            .inputs-container {
+                width: 100%;
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.3rem;
+
+                    input,
+                    textarea {
+                        padding: .5rem;
+                        border: 3px solid $hoverColor;
+                        outline: none;
+                        color: white;
+                        background-color: black;
+
+                        &::placeholder {
+                            color: white;
+                            opacity: .7;
+                        }
+                    }
+
+                    textarea {
+                        height: 9rem;
+                        resize: none;
+                    }
+
+                    button {
+                        cursor: pointer;
+                        width: 12rem;
+                        background-color: $hoverColor;
+                        color: white;
+                        text-decoration: none;
+                        font-weight: 500;
+                        transition: all .3s linear;
+
+                        &:hover {
+                            background-color: transparent;
+                            color: $hoverColor;
+                            border: 3px solid $hoverColor;
+                        }
+
+                        @extend input
+                    }
+                }
+            }
+        }
+    }
+}
