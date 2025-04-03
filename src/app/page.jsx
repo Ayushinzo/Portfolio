@@ -14,11 +14,11 @@ import { ToastContainer } from 'react-toastify';
 import Footer from './(components)/Footer/Footer';
 
 export default function Home() {
-  useEffect(() => {
-    document.addEventListener("contextmenu", (e) => {
-      e.preventDefault()
-    })
-  }, [])
+  // useEffect(() => {
+  //   document.addEventListener("contextmenu", (e) => {
+  //     e.preventDefault()
+  //   })
+  // }, [])
 
   return (
     <>
