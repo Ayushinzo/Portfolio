@@ -31,52 +31,56 @@
         .contact-description {
             width: 23rem;
 
-            .inputs-container {
-                width: 100%;
+            .box1,
+            .box2,
+            .box3 {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 1rem;
+                margin-top: 1rem;
 
-                form {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1.3rem;
+                a {
+                    background-color: $hoverColor;
+                    color: black;
+                    width: 50%;
+                    text-align: center;
+                    padding: .6rem;
+                    text-decoration: none;
+                    border-radius: 10px;
+                    font-weight: 500;
 
-                    input,
-                    textarea {
-                        padding: .5rem;
-                        border: 3px solid $hoverColor;
-                        outline: none;
-                        color: white;
-                        background-color: black;
-
-                        &::placeholder {
-                            color: white;
-                            opacity: .7;
-                        }
-                    }
-
-                    textarea {
-                        height: 9rem;
-                        resize: none;
-                    }
-
-                    button {
-                        cursor: pointer;
-                        width: 12rem;
-                        background-color: $hoverColor;
-                        color: white;
-                        text-decoration: none;
-                        font-weight: 500;
-                        transition: all .3s linear;
-
-                        &:hover {
-                            background-color: transparent;
-                            color: $hoverColor;
-                            border: 3px solid $hoverColor;
-                        }
-
-                        @extend input
+                    &:hover {
+                        background-color: transparent;
+                        color: $hoverColor;
+                        border: 2px solid $hoverColor;
                     }
                 }
             }
+
+            .box4 {
+                display: flex;
+                flex-direction: column;
+                margin-top: 1rem;
+                gap: 1rem;
+                align-items: center;
+                a {
+                    background-color: $hoverColor;
+                    color: black;
+                    width: 100%;
+                    text-align: center;
+                    padding: .6rem;
+                    text-decoration: none;
+                    border-radius: 10px;
+                    font-weight: 500;
+
+                    &:hover {
+                        background-color: transparent;
+                        color: $hoverColor;
+                        border: 2px solid $hoverColor;
+                    }
+                }
+            } 
         }
     }
 }

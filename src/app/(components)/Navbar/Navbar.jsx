@@ -68,7 +68,7 @@ function Navbar() {
                     <li><a onClick={() => setNavbar(false)} href="#education">Education</a></li>
                     <li><a onClick={() => setNavbar(false)} href="#project">Projects</a></li>
                     <li><a onClick={() => setNavbar(false)} href="#contact">Contact</a></li>
-                    <li><a download target='_blank' href={`${process.env.BACKEND_URL}/resume.jpg`} onClick={() => setNavbar(false)}>Resume <MdOutlineDownloadForOffline className='download' /></a></li>
+                    <li><a download target='_blank' href={`/myresume.pdf`} onClick={() => setNavbar(false)}>Resume <MdOutlineDownloadForOffline className='download' /></a></li>
                 </ul>
                 <RxCross1 className='menu cross' onClick={() => setNavbar(false)} />
             </nav>

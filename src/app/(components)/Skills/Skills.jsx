@@ -1,12 +1,84 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './_Skills.scss'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import axios from 'axios'
 
 function Skills() {
-    const [skills, setSkills] = useState([])
+    const skills = [
+        {
+            name: "Full Stack",
+            image: "/fullStack.jpg"
+        },
+        {
+            name: "HTML",
+            image: "/html.jpeg"
+        },
+        {
+            name: "CSS",
+            image: "/css.png"
+        },
+        {
+            name: "Javascript",
+            image: "/js.png"
+        },
+        {
+            name: "Typescript",
+            image: "/typescript.png"
+        },
+        {
+            name: "React",
+            image: "/react.svg"
+        },
+        {
+            name: "Next.js",
+            image: "/next.png"
+        },
+        {
+            name: "Node.js",
+            image: "/node.png"
+        },
+        {
+            name: "Mongodb",
+            image: "/mongodb.svg"
+        },
+        {
+            name: "SQL",
+            image: "/sql.png"
+        },
+        {
+            name: "SCSS",
+            image: "/scss.png"
+        },
+        {
+            name: "GSAP",
+            image: "/gsap.jpeg"
+        },
+        {
+            name: "Firebase",
+            image: "/firebase.png"
+        },
+        {
+            name: "Python",
+            image: "/python.jpg"
+        },
+        {
+            name: "Git",
+            image: "/git.png"
+        },
+        {
+            name: "Clerk",
+            image: "/clerk.png"
+        },
+        {
+            name: "REST API",
+            image: "/rest.jpg"
+        },
+        {
+            name: "Swiper.js",
+            image: "/swiper.png"
+        },
+    ]
 
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger)
@@ -29,22 +101,8 @@ function Skills() {
                 }
             }
         )
-    }, [skills])
-
-    async function fetchSkills() {
-        try {
-            let res = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/skills/list`)
-            if (res.data.success) {
-                setSkills(res.data.data)
-            }
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
-    useEffect(() => {
-        fetchSkills()
     }, [])
+
     return (
         <div className='skills' id='skills'>
             <h2>My <span>Skills</span></h2>
@@ -55,7 +113,7 @@ function Skills() {
                             return (
                                 <div className='skill' key={index}>
                                     <div className="image">
-                                        <img src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/${skill.image}`} alt={skill.name} />
+                                        <img src={skill.image} alt={skill.name} />
                                     </div>
                                     <p>{skill.name}</p>
                                 </div>
@@ -68,4 +126,4 @@ function Skills() {
     )
 }
 
-export default Skills
+export default Skills;

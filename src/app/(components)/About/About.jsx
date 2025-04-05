@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './_About.scss'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import Image from 'next/image'
-import axios from 'axios'
 
 function About() {
-    const [summary, setSummary] = useState({
-        para1: "",
-        para2: "",
-        para3: ""
-    })
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger)
         gsap.from(".about .main .sub-main .image img, .about .main .sub-main .content",
@@ -31,17 +25,6 @@ function About() {
             })
     }, [])
 
-    async function fetchSummary(){
-        let respones = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/summary/get`)
-        if(respones.data.success){
-            setSummary(respones.data.data[0])
-        }
-    }
-
-    useEffect(()=>{
-        fetchSummary()
-    }, [])
-
     return (
         <div className='about' id="about">
             <h2><span>About</span> Me</h2>
@@ -49,18 +32,18 @@ function About() {
                 <div className="sub-main">
                     <div className="image">
                         <Image src={"/about.webp"} alt='About' width={200} height={200} />
-                    </div> 
+                    </div>
                     <div className="content">
                         <p>
-                            {summary.para1}
+                            I am a passionate web developer looking for an internship to further develop my skills and gain hands-on experience. My journey started with a curiosity for how websites are built and has grown into a passion for creating interactive and user-friendly web applications.
                         </p>
                         <br />
                         <p>
-                            {summary.para2}
+                            I have a strong foundation in HTML, CSS, and JavaScript, and have gained experience working with modern frameworks like React and next.js. I enjoy solving complex problems and am always eager to learn new technologies and improve my coding practices.
                         </p>
                         <br />
                         <p>
-                            {summary.para3}
+                            I believe that collaboration and continuous learning are key to success in the tech industry. I am excited to bring my enthusiasm and skills to new challenges and opportunities in web development.
                         </p>
                     </div>
                 </div>
@@ -69,4 +52,4 @@ function About() {
     )
 }
 
-export default About
+export default About;

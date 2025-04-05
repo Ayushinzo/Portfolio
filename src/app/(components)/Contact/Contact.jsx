@@ -1,52 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "./_Contact.scss"
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import axios from 'axios'
-import { toast } from 'react-toastify'
 
 function Contact() {
-  const [contactData, setContactData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  })
-
-  function changeContact(e) {
-    let name = e.target.name;
-    let value = e.target.value;
-    setContactData(prev => ({ ...prev, [name]: value }))
-  }
-
-  async function submitContact(e) {
-    e.preventDefault()
-    try {
-      let response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/contact/submit`, contactData)
-      if (response.data.success) {
-        toast.success(response.data.message, {
-          position: "bottom-right",
-          theme: "dark",
-          autoClose: 3000
-        })
-        setContactData({
-          name: "",
-          email: "",
-          message: ""
-        })
-      }
-      else {
-        toast.error(response.data.message, {
-          position: "bottom-right",
-          theme: "dark",
-          autoClose: 3000
-        })
-      }
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger)
     gsap.fromTo(".contact .contact-content .image, .contact .contact-content .contact-description",
@@ -71,19 +29,27 @@ function Contact() {
 
   return (
     <div className='contact' id='contact'>
-      <h2><span>Contact</span> Me</h2>
+      <h2><span>Connect</span> With Me</h2>
       <div className="contact-content">
         <div className="image">
           <img src={"/contact.jpg"} alt='Contact' height={50} width={50} />
         </div>
         <div className="contact-description">
-          <div className="inputs-container">
-            <form action="/" onSubmit={submitContact} method='post'>
-              <input onChange={changeContact} value={contactData.name} type="text" name='name' placeholder='Enter your name' required />
-              <input onChange={changeContact} value={contactData.email} type="email" name='email' placeholder='Enter your email' required />
-              <textarea onChange={changeContact} value={contactData.message} name="message" placeholder='Enter message' required></textarea>
-              <button type='submit'>Send Message</button>
-            </form>
+          <div className="box box1">
+            <a href="https://www.instagram.com/___ayush.com___/" target='_blank'>Instagram</a>
+            <a href="https://www.linkedin.com/in/ayush-shembekar-20a10b288" target='_blank'>LinkedIn</a>
+          </div>
+          <div className="box box2">
+            <a href="https://www.facebook.com/ayush.shembekar.3" target='_blank'>Facebook</a>
+            <a href="https://github.com/Ayushinzo" target='_blank'>Github</a>
+          </div>
+          <div className="box box3">
+            <a href="tel:+9975721744">+9975721744</a>
+            <a href="tel:+9130240076">+9130240076</a>
+          </div>
+          <div className="box box4">
+            <a href="mailto:ayushshembekar07@gmail.com">ayushshembekar07@gmail.com</a>
+            <a href="mailto:ayushshembekar2004@gmail.com">ayushshembekar2004@gmail.com</a>
           </div>
         </div>
       </div>
@@ -91,4 +57,4 @@ function Contact() {
   )
 }
 
-export default Contact
+export default Contact;

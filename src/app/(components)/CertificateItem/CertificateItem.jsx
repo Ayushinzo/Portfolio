@@ -11,7 +11,7 @@ function CertificateItem({ item }) {
             <p className='description'>{item.description}</p>
             <div className='cer-footer'>
                 <a href={item.link} target='_blank' rel='noopener noreferrer'>View</a>
-                <i>{new Date(item.date).toLocaleDateString()}</i>
+                <i>{item.date}</i>
             </div>
         </div>
     )

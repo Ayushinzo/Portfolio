@@ -277,6 +277,11 @@ body {
 }
 
 @media screen and (max-width: 450px) {
+    .home .image img {
+        width: 18rem !important;
+        height: 18rem !important;
+    }
+
     .about {
         .main {
             .sub-main {

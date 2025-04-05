@@ -3,38 +3,12 @@ import "./_ProjectItem.scss"
 import { memo } from 'react'
 import { FaRocket } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 
-function ProjectItem({ item, index, projects }) {
-    useGSAP(() => {
-        // gsap.registerPlugin(ScrollTrigger)
-        // gsap.fromTo(".project-item",
-        //     {
-        //         y: 300,
-        //         scale: 0,
-        //         opacity: 0
-        //     },
-        //     {
-        //         y: 0,
-        //         scale: 1,
-        //         opacity: 1,
-        //         scrollTrigger: {
-        //             trigger: ".project-item",
-        //             scroller: "body",
-        //             markers: true,
-        //             scrub: true,
-        //             start: "top bottom",
-        //             end: "top 90%"
-        //         }
-        //     })
-    }, [projects])
-
+function ProjectItem({ item, index }) {
     return (
         <div key={index} className='project-item'>
             <div className="image">
-                <img src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/${item.image}`} alt={item.pro_name} />
+                <img src={item.image} alt={item.pro_name} />
             </div>
             <h2>{item.pro_name}</h2>
             <p>{item.pro_desc}</p>

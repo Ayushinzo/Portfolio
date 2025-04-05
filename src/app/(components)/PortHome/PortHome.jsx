@@ -1,34 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import './_PortHome.scss'
 import Typed from 'typed.js'
 import { useGSAP } from '@gsap/react'
 import gsap from "gsap"
 import { Draggable } from 'gsap/Draggable'
-import getILocation from '@/app/(utils)/getMyIp'
-import axios from 'axios'
-
-let a = ["HTML", "CSS", "JavaScript", "React", "Node.js", "Express", "MongoDB", "Python", "Next.js", "SCSS", "Clerk Authentication", "Firebase", "GSAP", "Github", "Responsive design"]
 
 function PortHome() {
-  const type = React.useRef()
-  const [skills, setSkills] = useState([])
-  let string = []
-  async function fetchSkills() {
-    try {
-      let response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/skills/list`)
-      if (response.data.success) {
-        response.data.data.forEach(element => {
-          string.push(element.name)
-        })
-        setSkills(string)
-      }
-    } catch (error) {
-
-    }
-  }
+  let type = useRef()
   useEffect(() => {
     const typed = new Typed(type.current, {
-      strings: skills,
+      strings: ["Full Stack", "HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Node.js", "MongoDB", "SCSS", "GSAP", "Firebase", "SQL", "Python", "Git", "Clerk", "REST API", "Swiper.js"],
       typeSpeed: 50,
       backSpeed: 50,
       loop: true,
@@ -36,17 +17,7 @@ function PortHome() {
     return () => {
       typed.destroy();
     };
-  }, [skills]);
-
-  function show() {
-    console.log(string)
-  }
-
-  useEffect(() => {
-    getILocation()
-    fetchSkills()
-    console.log(process.env.NEXT_PUBLIC_BACKEND_URL)
-  }, [])
+  }, []);
 
   useGSAP(() => {
     gsap.registerPlugin(Draggable)
@@ -74,17 +45,17 @@ function PortHome() {
         <div className="content">
           <p className='greet'>HELLO THERE, WELCOME TO MY SITE</p>
           <h1>I am Ayush Shembekar</h1>
-          <h2 onClick={show}>Web Developer</h2>
+          <h2>Web Developer</h2>
           <p className='skilledIn'>Skilled in <span ref={type}></span></p>
-          <a href={`${process.env.NEXT_PUBLIC_BACKEND_URL}/resume.jpg`} download>Resume</a>
+          <a href={'/myresume.pdf'} download>Resume</a>
         </div>
 
         <div className="image">
-          <img src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/profile.jpg`} alt="ayush" />
+          <img src={`/profile.jpg`} alt="ayush" />
         </div>
       </div>
     </div>
   );
 }
 
-export default PortHome
+export default PortHome;

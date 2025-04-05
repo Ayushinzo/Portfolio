@@ -1,25 +1,32 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import "./_Education.scss"
 import { SlCalender } from "react-icons/sl";
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import axios from 'axios';
 import { FaGraduationCap } from "react-icons/fa6";
 
 function Education() {
-  const [education, setEducation] = useState([])
-
-  async function fetchEducation(){
-    let response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/education/list`)
-    if(response.data.success){
-      setEducation(response.data.data)
+  const education = [
+    {
+      edu_name: "RTMNU",
+      edu_course: "BCA",
+      edu_score: "72%",
+      edu_order: 1,
+      edu_from: "2021",
+      edu_to: "2024",
+      image: "/rtmnu.png",
+    },
+    {
+      edu_name: "Keshav Nagar Junior Collage, Nagpur",
+      edu_course: "HSC (Computer Science)",
+      edu_score: "83%",
+      edu_order: 2,
+      edu_from: "2019",
+      edu_to: "2021",
+      image: "/keshav.jpg",
     }
-  }
-
-  useEffect(() => {
-    fetchEducation()
-  }, [])
+  ]
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger)
@@ -42,8 +49,8 @@ function Education() {
         }
       }
     )
-  }, [education])
-  
+  }, [])
+
   return (
     <div className='education' id='education'>
       <h2>My <span>Education</span></h2>
@@ -52,9 +59,9 @@ function Education() {
           {
             education.sort((a, b) => a.edu_order - b.edu_order).map((item, index) => (
               <div key={index} className="edu-box">
-                <p className='index'><FaGraduationCap/></p>
+                <p className='index'><FaGraduationCap /></p>
                 <div className="image">
-                  <img src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/${item.image}`} alt={item.image} />
+                  <img src={item.image} alt={item.image} />
                   <h3>{item.edu_name}</h3>
                 </div>
                 <hr className='hr' />
@@ -72,4 +79,4 @@ function Education() {
   )
 }
 
-export default Education
+export default Education;

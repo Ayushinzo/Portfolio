@@ -43,6 +43,7 @@
                 background: black;
                 border-radius: 10px;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                border: 2px solid $hoverColor;
 
                 &:hover {
                     transform: scale(1.09) !important;

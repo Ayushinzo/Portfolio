@@ -1,29 +1,28 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './_Certificate.scss'
 import CertificateItem from '../CertificateItem/CertificateItem'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import axios from 'axios'
 
 function Certificate() {
-    const [certificate, setCertificate] = useState([])
-
-    async function fetchCertificates() {
-        try {
-            let res = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/certificate/list`)
-            if (res.data.success) {
-                setCertificate(res.data.data)
-            }
-        } catch (error) {
-            console.log(error)
+    const certificate = [
+        {
+            organization: "Maharashtra State Board of Technical Education",
+            cerName: "MS-CIT",
+            description: "MSCIT is a comprehensive IT literacy course designed to equip individuals with essential computer skills, including MS Office, MS Excel, MS Powerpoint, internet usage, and basic IT concepts. It is recognized by the Maharashtra State Government.",
+            link: "https://drive.google.com/file/d/1DuuEwyp82c1eu89nBsKwOOdkgJ81wDDq/view?usp=sharing",
+            date: "2/8/2019"
+        },
+        {
+            organization: "Study Section",
+            cerName: "Python",
+            description: "This Python certification demonstrates proficiency in Python programming, covering fundamental concepts and problem-solving techniques. It validates the ability to write efficient and maintainable Python code.",
+            link: "https://drive.google.com/file/d/1r3FP6cHiSf6F6rfTSpWDKnZbHvfdIpRD/view?usp=sharing",
+            date: "10/8/2023"
         }
-    }
-
-    useEffect(() => {
-        fetchCertificates()
-    }, [])
+    ]
 
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger)
@@ -49,21 +48,22 @@ function Certificate() {
                 }
             }
         )
-    }, [certificate])
+    }, [])
+
     return (
         <div className='certificate' id='certificate'>
             <h1>My <span>Certificate</span></h1>
             <div className="content">
                 <div className="certificate-container">
-                        {
-                            certificate.map((item, index) => (
-                                <CertificateItem key={index} item={item} />
-                            ))
-                        }
+                    {
+                        certificate.map((item, index) => (
+                            <CertificateItem key={index} item={item} />
+                        ))
+                    }
                 </div>
             </div>
         </div>
     )
 }
 
-export default Certificate
+export default Certificate;

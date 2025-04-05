@@ -7,6 +7,7 @@
     background: black;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid $hoverColor;
 
     .image {
         width: 100%;
@@ -65,7 +66,8 @@
         margin-top: 1.3rem;
         display: flex;
         align-items: center;
-        gap: .8rem;
+        column-gap: .7rem;
+        row-gap: .4rem;
         flex-wrap: wrap;
 
         span {

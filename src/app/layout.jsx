@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" type="image/x-icon" href={`${process.env.NEXT_PUBLIC_BACKEND_URL}/profile.jpg`} />
+        <link rel="icon" type="image/x-icon" href="/profile.jpg" />
       </head>
       <body>
         {children}

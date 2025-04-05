@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect } from 'react';
+import React from 'react';
 import './page.scss';
 import Navbar from './(components)/Navbar/Navbar';
 import PortHome from './(components)/PortHome/PortHome';
@@ -10,7 +10,6 @@ import Education from './(components)/Education/Education';
 import Projects from './(components)/Projects/Projects';
 import Contact from './(components)/Contact/Contact';
 import Share from './(components)/Share/Share';
-import { ToastContainer } from 'react-toastify';
 import Footer from './(components)/Footer/Footer';
 
 export default function Home() {
@@ -25,7 +24,6 @@ export default function Home() {
       <Navbar />
       <Share />
       <div>
-        <ToastContainer />
         <div className="hero">
           <PortHome />
           <About />
@@ -43,4 +41,4 @@ export default function Home() {
       </div >
     </>
   )
-}
+} 
