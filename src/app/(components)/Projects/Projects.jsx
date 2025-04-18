@@ -69,7 +69,15 @@ function Projects() {
             github: "https://github.com/Ayushinzo/dashboard.git",
             live: "https://dashboard-two-teal-14.vercel.app",
             image: "/dashboard.png"
-        }
+        },
+        {
+            pro_name: "Todo App",
+            pro_desc: "This is a simple and intuitive Todo App built using Next.js, React, and TailwindCSS. It allows users to add, edit, and delete tasks seamlessly. The app is fully responsive and demonstrates the use of modern UI design principles and state management.",
+            pro_skills: "Next.js, React, Tailwindcss",
+            github: "https://github.com/Ayushinzo/Simple-todo.git",
+            live: "https://todo-app-mu-six-28.vercel.app/",
+            image: "/todo.png"
+        },
     ]
 
     useGSAP(() => {
