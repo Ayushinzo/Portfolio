@@ -35,6 +35,10 @@ function Skills() {
             image: "/next.png"
         },
         {
+            name: "Redux",
+            image: "/redux.jpg"
+        },
+        {
             name: "Node.js",
             image: "/node.png"
         },
@@ -49,6 +53,10 @@ function Skills() {
         {
             name: "SCSS",
             image: "/scss.png"
+        },
+        {
+            name: "Tailwind CSS",
+            image: "/tailwindcss.png"
         },
         {
             name: "GSAP",
