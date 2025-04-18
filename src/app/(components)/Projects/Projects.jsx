@@ -27,7 +27,7 @@ function Projects() {
             pro_desc: "This is the Full Stack online food delivery website created using next.js along with admin dashboard to satisfy the craving of peoples. It features a user-friendly interface for customers to browse menus and place orders. The admin dashboard allows restaurant owners to manage orders and update menus.",
             pro_skills: "Full stack, html, css, javascript, node.js, react, next.js, mongodb, node.js, rest api, JWT",
             github: "https://github.com/Ayushinzo/tomato-app.git",
-            live: "https://tomato-dugrr835t-ayushs-projects-bb0df644.vercel.app/",
+            live: "https://tomato-app-orcin.vercel.app/",
             image: "/tomato.png"
         },
         {
